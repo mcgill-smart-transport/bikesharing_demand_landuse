@@ -97,7 +97,7 @@ def loss_fun2(beta, neighbor_beta, weight):
     """
     y = 0
     for i in range(neighbor_beta.shape[0]):
-        y = weight[i] * cp.square(cp.pnorm(beta - neighbor_beta[i, :]))
+        y += weight[i] * cp.square(cp.pnorm(beta - neighbor_beta[i, :]))
     return y
 
 
